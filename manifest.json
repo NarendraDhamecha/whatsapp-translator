@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Translator",
+  "version": "1.0",
+  "description": "Translate WhatsApp messages using DeepL",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
