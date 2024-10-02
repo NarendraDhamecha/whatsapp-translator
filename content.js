@@ -45,11 +45,7 @@ async function initializeTranslation(targetLang) {
     for (const message of chatMessages) {
       const originalText = message.textContent.trim();
 
-      if (
-        !message.hasAttribute("data-translated") &&
-        targetLang !== "EN-GB" &&
-        originalText.length > 0
-      ) {
+      if (!message.hasAttribute("data-translated") && originalText.length > 0) {
         try {
           const translatedText = await translateText(originalText, targetLang);
           console.log(`Translated message: ${translatedText}`);
